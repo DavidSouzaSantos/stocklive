@@ -1,16 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebApiStockLive.Enums;
 
 namespace WebApiStockLive.Models
 {
-    public class User
+    public class User : IdentityUser<int>
     {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string FullName { get; set; }
         public List<UserRoles> UserRoles { get; set; }
         public StatusEnum Status { get; set; }
     }
