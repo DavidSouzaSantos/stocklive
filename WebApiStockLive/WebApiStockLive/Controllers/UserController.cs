@@ -31,10 +31,10 @@ namespace WebApiStockLive.Controllers
                     Id = 1,
                     Username = pUserLogin.Username,
                     Password = pUserLogin.Password,
-                    Role = "employer"
+                    Status = Enums.StatusEnum.Inactive
                 };
 
-                if (user == null)
+                if (user == null || user.Status == Enums.StatusEnum.Inactive)
                     return NotFound(new { message = "Usuário ou senha inválidos" });
 
                 var token = TokenService.GenerateToken(_config, user);
