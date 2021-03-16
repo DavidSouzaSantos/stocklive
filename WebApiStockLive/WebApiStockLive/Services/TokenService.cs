@@ -23,8 +23,7 @@ namespace WebApiStockLive.Services
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, pUser.Id.ToString()),
-                new Claim(ClaimTypes.Name, pUser.UserName),
-                new Claim(ClaimTypes.Role, pUser.UserRoles.ToString())
+                new Claim(ClaimTypes.Name, pUser.UserName)
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor

@@ -10,3 +10,5 @@
 /WebApiStockLive/Repository/bin/Debug/netcoreapp3.1
 /WebApiStockLive/Repository/obj
 /WebApiStockLive/WebApiStockLive/stocklive.db
+/WebApiStockLive/WebApiStockLive/stocklive.db-wal
+/WebApiStockLive/WebApiStockLive/stocklive.db-shm
