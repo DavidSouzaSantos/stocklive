@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
-using WebApiStockLive.Enums;
+using Domain.Enums;
 
-namespace WebApiStockLive.Models
+namespace Domain.Models.Identity
 {
     public class User : IdentityUser<int>
     {

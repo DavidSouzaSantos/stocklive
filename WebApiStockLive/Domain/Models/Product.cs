@@ -1,6 +1,6 @@
-﻿using WebApiStockLive.Enums;
+﻿using Domain.Enums;
 
-namespace WebApiStockLive.Models
+namespace Domain.Models
 {
     public class Product
     {

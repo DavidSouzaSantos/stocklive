@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 
-namespace WebApiStockLive.Models
+namespace Domain.Models.Identity
 {
     public class Role : IdentityRole<int>
     {

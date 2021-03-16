@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Domain.Models.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using WebApiStockLive.Models;
 
 namespace WebApiStockLive.Services
 {
@@ -23,8 +23,8 @@ namespace WebApiStockLive.Services
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, pUser.Id.ToString()),
-                new Claim(ClaimTypes.Name, pUser.Username),
-                new Claim(ClaimTypes.Role, pUser.Role.ToString())
+                new Claim(ClaimTypes.Name, pUser.UserName),
+                new Claim(ClaimTypes.Role, pUser.UserRoles.ToString())
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor

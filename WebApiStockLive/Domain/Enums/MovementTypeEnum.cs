@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace WebApiStockLive.Enums
+namespace Domain.Enums
 {
     public enum MovementTypeEnum
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace WebApiStockLive.Models
+namespace Domain.Models.Identity
 {
     public class UserRoles : IdentityUserRole<int>
     {

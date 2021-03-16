@@ -6,3 +6,7 @@
 /WebApiStockLive/.vs/WebApiStockLive/v16
 /WebApiStockLive/WebApiStockLive/bin/Debug/netcoreapp3.1
 /WebApiStockLive/.vs/WebApiStockLive/config
+/WebApiStockLive/Domain/bin/Debug/netcoreapp3.1
+/WebApiStockLive/Repository/bin/Debug/netcoreapp3.1
+/WebApiStockLive/Repository/obj
+/WebApiStockLive/WebApiStockLive/stocklive.db

@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Domain.Enums;
+using Domain.Models.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using WebApiStockLive.Dtos;
-using WebApiStockLive.Models;
 using WebApiStockLive.Services;
 
 namespace WebApiStockLive.Controllers
@@ -26,19 +27,13 @@ namespace WebApiStockLive.Controllers
         {
             try
             {
-                var user = new User
-                {
-                    Id = 1,
-                    Username = pUserLogin.Username,
-                    Password = pUserLogin.Password,
-                    Status = Enums.StatusEnum.Inactive
-                };
+                var user = new User();
 
-                if (user == null || user.Status == Enums.StatusEnum.Inactive)
+                if (user == null || user.Status == StatusEnum.Inactive)
                     return NotFound(new { message = "Usuário ou senha inválidos" });
 
                 var token = TokenService.GenerateToken(_config, user);
-                user.Password = string.Empty;
+
 
                 return Ok(new
                 {
