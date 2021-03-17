@@ -82,7 +82,7 @@ namespace Repository
             return await query.ToArrayAsync();
         }
 
-        public async Task<Stock> GetAllStocksAsyncByProductId(int pProductId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false)
+        public async Task<Stock[]> GetAllStocksAsyncByProductName(string pProductName, bool pIncludeProduct = false, bool pIncludeMoveOrders = false)
         {
             IQueryable<Stock> query = _context.Stocks;
 
@@ -95,12 +95,12 @@ namespace Repository
             if (pIncludeMoveOrders)
             {
                 query = query
-                    .Include(p => p.MoveOrders);
+                    .Include(m => m.MoveOrders);
             }
 
-            query = query.Where(s => s.Product.Id == pProductId).OrderByDescending(s => s.Id);
+            query = query.Where(s => s.Product.Name.ToLower().Contains(pProductName)).OrderByDescending(s => s.Id);
 
-            return await query.FirstOrDefaultAsync();
+            return await query.ToArrayAsync();
         }
 
         public async Task<Stock> GetStockAsyncById(int pStockId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false)
