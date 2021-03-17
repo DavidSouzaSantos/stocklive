@@ -1,9 +1,6 @@
 ﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository
@@ -41,7 +38,7 @@ namespace Repository
         #endregion
 
         #region Product
-        public async Task<Product[]> GetAllProductAsync()
+        public async Task<Product[]> GetAllProductsAsync()
         {
             IQueryable<Product> query = _context.Products;
 
@@ -50,7 +47,7 @@ namespace Repository
             return await query.ToArrayAsync();
         }
 
-        public async Task<Product[]> GetAllProductAsyncByName(string pProductName)
+        public async Task<Product[]> GetAllProductsAsyncByName(string pProductName)
         {
             IQueryable<Product> query = _context.Products;
 
@@ -70,7 +67,7 @@ namespace Repository
         #endregion
 
         #region Stock
-        public async Task<Stock[]> GetAllStockAsync(bool pIncludeProduct = false)
+        public async Task<Stock[]> GetAllStocksAsync(bool pIncludeProduct = false)
         {
             IQueryable<Stock> query = _context.Stocks;
 
@@ -85,7 +82,7 @@ namespace Repository
             return await query.ToArrayAsync();
         }
 
-        public async Task<Stock> GetAllStockAsyncByProductId(int pProductId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false)
+        public async Task<Stock> GetAllStocksAsyncByProductId(int pProductId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false)
         {
             IQueryable<Stock> query = _context.Stocks;
 
@@ -129,7 +126,7 @@ namespace Repository
         #endregion
 
         #region MoveOrder
-        public async Task<MoveOrder[]> GetAllMoveOrderAsync(bool pIncludeProduct = false)
+        public async Task<MoveOrder[]> GetAllMoveOrdersAsync(bool pIncludeProduct = false)
         {
             IQueryable<MoveOrder> query = _context.MoveOrders;
 
@@ -144,7 +141,7 @@ namespace Repository
             return await query.ToArrayAsync();
         }
 
-        public async Task<MoveOrder[]> GetAllMoveOrderAsyncByProductId(int pProductId, bool pIncludeProduct = false)
+        public async Task<MoveOrder[]> GetAllMoveOrdersAsyncByProductId(int pProductId, bool pIncludeProduct = false)
         {
             IQueryable<MoveOrder> query = _context.MoveOrders;
 

@@ -23,21 +23,6 @@ namespace WebApiStockLive.Controllers
         private readonly SignInManager<User> _signInManager;
         private readonly IMapper _mapper;
 
-        [HttpGet("{userId}")]
-        [AllowAnonymous]
-        public async Task<IActionResult> GetUserById(string userId)
-        {
-            try
-            {
-                //return Ok(await _userManager.FindByIdAsync(userId));
-                return Ok(new { user = new UserDto()});
-            }
-            catch (Exception e)
-            {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou: " + e.Message);
-            }
-        }
-
         public UserController(IConfiguration config, UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper)
         {
             _config = config;
@@ -46,15 +31,29 @@ namespace WebApiStockLive.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("Register")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Register(UserDto userDto)
+        [HttpGet("{pUserId}")]
+        [Authorize("Administrador")]
+        public async Task<IActionResult> GetUserById(string pUserId)
         {
             try
             {
-                var user = _mapper.Map<User>(userDto);
+                return Ok(await _userManager.FindByIdAsync(pUserId));
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou: " + e.Message);
+            }
+        }
 
-                var result = await _userManager.CreateAsync(user, userDto.Password);
+        [HttpPost("register")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Register(UserDto pUserDto)
+        {
+            try
+            {
+                var user = _mapper.Map<User>(pUserDto);
+
+                var result = await _userManager.CreateAsync(user, pUserDto.Password);
 
                 var userToReturn = _mapper.Map<UserDto>(user);
 
@@ -88,11 +87,12 @@ namespace WebApiStockLive.Controllers
 
                     var userToReturn = _mapper.Map<UserLoginDto>(appUser);
 
+
                     var token = TokenService.GenerateToken(_config, appUser);
 
                     return Ok(new
                     {
-                        user,
+                        user = new { user.UserName, user.UserRoles},
                         token
                     });
                 }

@@ -1,7 +1,4 @@
 ﻿using Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository
@@ -16,18 +13,18 @@ namespace Repository
         Task<bool> SaveChangesAsync();
 
         //EVENTOS
-        Task<Product[]> GetAllProductAsync();
-        Task<Product[]> GetAllProductAsyncByName(string pProductName);
+        Task<Product[]> GetAllProductsAsync();
+        Task<Product[]> GetAllProductsAsyncByName(string pProductName);
         Task<Product> GetProductAsyncById(int pProductId);
 
         //PALESTRANTE        
-        Task<Stock[]> GetAllStockAsync(bool pIncludeProduct);
-        Task<Stock> GetAllStockAsyncByProductId(int pProductId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false);
+        Task<Stock[]> GetAllStocksAsync(bool pIncludeProduct);
+        Task<Stock> GetAllStocksAsyncByProductId(int pProductId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false);
         Task<Stock> GetStockAsyncById(int pStockId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false);
 
         //PALESTRANTE        
-        Task<MoveOrder[]> GetAllMoveOrderAsync(bool pIncludeProduct = false);
-        Task<MoveOrder[]> GetAllMoveOrderAsyncByProductId(int pProductId, bool pIncludeProduct = false);
+        Task<MoveOrder[]> GetAllMoveOrdersAsync(bool pIncludeProduct = false);
+        Task<MoveOrder[]> GetAllMoveOrdersAsyncByProductId(int pProductId, bool pIncludeProduct = false);
         Task<MoveOrder> GetMoveOrderAsyncById(int pMoveOrderId, bool pIncludeProduct = false);
     }
 }
