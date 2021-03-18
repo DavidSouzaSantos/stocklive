@@ -63,7 +63,7 @@ namespace WebApiStockLive.Controllers
             try
             {
                 var stock = await _repo.GetStockAsyncById(pStockId);
-                var results = _mapper.Map<ProductDto[]>(stock);
+                var results = _mapper.Map<StockDto[]>(stock);
                 return Ok(results);
             }
             catch (Exception e)

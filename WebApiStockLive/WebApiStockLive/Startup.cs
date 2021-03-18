@@ -9,11 +9,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Repository;
+using System;
 using System.Text;
 
 namespace WebApiStockLive
 {
+    /// <summary>
+    /// Startup
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -71,6 +76,21 @@ namespace WebApiStockLive
             services.AddAutoMapper();
             services.AddCors();
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Stock Live Web API",
+                    Description = "Web API to manage your stock",
+                    Contact = new OpenApiContact() { 
+                        Name = "David Souza dos Santos", 
+                        Email = "david.xvc93@gmail.com", 
+                        Url = new Uri("https://davidsouzasantos.github.io/dss-portfolio/")
+                    }
+                });
+                c.IncludeXmlComments(GetXmlCommentsPath());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -98,6 +118,19 @@ namespace WebApiStockLive
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Stock Live Web API V1");
+            });
+        }
+
+        private string GetXmlCommentsPath()
+        {
+            var app = System.AppContext.BaseDirectory;
+            return System.IO.Path.Combine(app, "WebApiStockLive.xml");
         }
     }
 }

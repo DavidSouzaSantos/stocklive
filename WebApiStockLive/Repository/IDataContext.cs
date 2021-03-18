@@ -19,7 +19,7 @@ namespace Repository
 
         //PALESTRANTE        
         Task<Stock[]> GetAllStocksAsync(bool pIncludeProduct = false);
-        Task<Stock> GetAllStocksAsyncByProductName(string pProductName, bool pIncludeProduct = false, bool pIncludeMoveOrders = false);
+        Task<Stock[]> GetAllStocksAsyncByProductName(string pProductName, bool pIncludeProduct = false, bool pIncludeMoveOrders = false);
         Task<Stock> GetStockAsyncById(int pStockId, bool pIncludeProduct = false, bool pIncludeMoveOrders = false);
 
         //PALESTRANTE        

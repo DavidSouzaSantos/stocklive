@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiStockLive</name>
+    </assembly>
+    <members>
+        <member name="T:WebApiStockLive.Controllers.MoveOrderController">
+            <summary>
+            Move Order Controller
+            </summary>
+        </member>
+        <member name="M:WebApiStockLive.Controllers.MoveOrderController.GetAllMoveOrders">
+            <summary>
+            Get all move orders
+            </summary>
+            <remarks>This will get all move orders</remarks>
+            <returns>Return all move orders</returns>
+        </member>
+        <member name="M:WebApiStockLive.Controllers.MoveOrderController.GetAllMoveOrdersAsyncByProductId(System.Int32)">
+            <summary>
+            Get all move orders by product id
+            </summary>
+            <remarks>This will get all move orders by product id</remarks>
+            <param name="pProductId"></param>
+            <returns>Return move orders by product id</returns>
+        </member>
+        <member name="M:WebApiStockLive.Controllers.MoveOrderController.GetMoveOrderById(System.Int32)">
+            <summary>
+            Get move order by id
+            </summary>
+            <remarks>This will get move order by id</remarks>
+            <param name="pMoveOrderId"></param>
+            <returns>Return move order with set id</returns>
+        </member>
+        <member name="M:WebApiStockLive.Controllers.MoveOrderController.AddStock(WebApiStockLive.Dtos.MoveOrderDto)">
+            <summary>
+            Add a new move order
+            </summary>
+            <remarks>This will add a new move order</remarks>
+            <param name="pMoveOrderDto"></param>
+            <returns>Return the added move order</returns>
+        </member>
+        <member name="M:WebApiStockLive.Controllers.MoveOrderController.UpdateStock(System.Int32,WebApiStockLive.Dtos.MoveOrderDto)">
+            <summary>
+            Update a move order by id
+            </summary>
+            <remarks>This will update move order by id</remarks>
+            <param name="pMoveOrderId"></param>
+            <param name="pMoveOrderDto"></param>
+            <returns>Return the updated move order</returns>
+        </member>
+        <member name="M:WebApiStockLive.Controllers.MoveOrderController.DeleteStock(System.Int32)">
+            <summary>
+            Delete Move Order by id
+            </summary>
+            <remarks>This will delete move order by id</remarks>
+            <param name="pMoveOrderId"></param>
+            <returns>Return move order deleted</returns>
+        </member>
+        <member name="T:WebApiStockLive.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+    </members>
+</doc>

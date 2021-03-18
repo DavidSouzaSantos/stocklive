@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiStockLive</name>
+    </assembly>
+    <members>
+        <member name="T:WebApiStockLive.Controllers.MoveOrderController">
+            <summary>
+            Move Order Controller
+            </summary>
+        </member>
+        <member name="T:WebApiStockLive.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+    </members>
+</doc>
