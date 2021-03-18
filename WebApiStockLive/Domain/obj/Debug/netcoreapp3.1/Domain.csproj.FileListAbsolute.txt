@@ -1,9 +1,0 @@
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\bin\Debug\netcoreapp3.1\Domain.dll
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\obj\Debug\netcoreapp3.1\Domain.dll
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
-D:\users\DAVID\Documentos\Projetos\github\stocklive\WebApiStockLive\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
