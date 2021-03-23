@@ -30,42 +30,6 @@ body {
   background-color: #fff;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  padding: 48px 0 0;
-  box-shadow: inset -1px 0 0 rgb(0 0 0 / 10%);
-}
-
-.navbar{
-  padding-top: 1rem; 
-  padding-bottom: 1rem;
-  font-weight: bold;
-}
-
-.navbar-brand {
-  font-size: 1.75em;
-  transition: font-size 0.3s;
-}
-
-.nav-link {
-  color: #495057;
-  border-color: #dee2e6 #dee2e6 #fff;
-}
-
-a.nav-link, a.navbar-brand {
-  color: #fff;
-}
-
-.nav-link:hover, .nav-link:focus {
-  border-color: #e9ecef #e9ecef #dee2e6;
-  color: #198075;
-}
-
-
 .bg-main {
   background-color: #204051 !important;
 }
@@ -88,4 +52,28 @@ a.nav-link, a.navbar-brand {
 
 .bg-red{
   background-color: #9C3D45 !important;
+}
+
+.text-main {
+  color: #204051 !important;
+}
+
+.text-details {
+  color: #3b6978 !important;
+}
+
+.text-details-lights{
+  color: #84a9ac !important;
+}
+
+.text-dark {
+  color: #353642 !important;
+}
+
+.text-gray{
+  color: #e4e3e3 !important;
+}
+
+.text-red{
+  color: #9C3D45 !important;
 }
