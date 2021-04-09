@@ -1,3 +1,77 @@
 <div class="container-fluid">
   <h1 class="mt-4 text-main">Produtos</h1>
+
+  <div class="row mt-4 mb-4">
+    <div class="col-3">
+      <input type="text" class="form-control" placeholder="Código">
+    </div>
+    <div class="col-6">
+      <input type="text" class="form-control" placeholder="Nome">
+    </div>
+    <div class="col-3">
+      <select id="inputState" class="form-control">
+        <option selected>Status...</option>
+        <option>Ativo</option>
+        <option>Inativo</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row-reverse mb-2">
+    <div>
+      <button class="btn btn-outline-primary" (click)="novoProduto('teste')">
+        <i class="fa fa-plus-circle"></i>&nbsp;
+        Novo Produto
+      </button>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>
+          <button class="btn btn-outline-primary" (click)="alternarImagem()">
+            <i class="{{mostrarImagem ? 'fa fa-eye-slash' : 'fa fa-eye'}}"></i>
+          </button>
+        </th>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Status</th>
+        <th colspan="2">Opções</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="produtos && produtos.length">
+      <tr *ngFor="let produto of produtosFiltrados">
+        <td>
+          <img *ngIf="mostrarImagem" src="assets/img/teste/{{produto.image}}" [style.width.px]="50"
+            [style.margin.px]="2">
+        </td>
+        <td>{{produto.id}}</td>
+        <td>{{produto.name}}</td>
+        <td>
+          <ng-toggle [value]="produto.status=='Ativo'" 
+          [width]="70" [height]="25"
+          [color]="{unchecked: '#939da2',checked: '#198075'}"
+          [labels]="{unchecked: 'Inativo',checked: 'Ativo'}"
+          ></ng-toggle>
+        </td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-sm btn-success" tooltip="Editar" (click)="editarProduto()">
+              <i class="fa fa-edit"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="!produtos">
+      <tr>
+        <td colspan="7" class="text-center">
+          <h4>
+            Nenhum produto encontrado!
+          </h4>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
 </div>
